@@ -118,35 +118,36 @@
 				    		</b>
 				   		<td>
 				    		<b>
-				    			<?php
+     							<?php
+      								if ($room == 'Standard') {
+       									$total = 90;
+      								}else if ($room == 'Superior') {
+       									$total = 150;
+      								}else if ($room == 'Luxury') {
+       									$total = 200;
+      								}
+      							?>
+
+      							<?php
       								if (!empty($_GET['InputService'])) {
       								foreach ($_GET['InputService'] as $InputService) {
         							echo "<li>" .$InputService."</li>";
-       
-       							if ($InputService == 'option1') {
-        							$harga += 20;
-       							}else if ($InputService == 'option2') {
-        							$harga += 20;
-       										}
+
+        							if($InputService == 'Room Service'){
+        								$total += 20;
       									}
-     								}
+      									else if ($InputService == 'Breakfast'){
+      										$total += 20;
+      									}
+        							}
+     							}
      							?>
 				    		</b>
 				   		</td>
 				   		<td>
 				    		<b>
-				    			<?php
-      								if ($room == 'Standard') {
-       									$harga = 90;
-      								}else if ($room == 'Superior') {
-       									$harga = 150;
-      								}else if ($kamar == 'Luxury') {
-       									$harga = 200;
-      								}
-
-      							?>
      							<?php 
-     								echo '$ ' .$harga;
+     								echo '$ ' .$total;
 
      							 ?>
 				    		</b>

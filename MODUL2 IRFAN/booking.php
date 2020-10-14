@@ -36,7 +36,7 @@
   		<div class="row">
     		<div class="col-sm">
 
-     			<form action="/modul2/mybooking.php" method="GET" >
+     			<form action="mybooking.php" method="GET" >
  					<div class="form-group row">
     						<label for="inputNama" class="col-sm-2 col-form-label">Nama</label>
    					 			<div class="col-sm-10">
@@ -64,10 +64,10 @@
   					<div class="form-group row">
     						<label for="inputDuration" class="col-sm-2 col-form-label">Room Type</label>
     							<div class="col-sm-10">
-     								<select class="custom-select" name="inputRoom"> 
-            							<option>Standard</option>
-            							<option>Superior</option>
-            							<option>Luxury</option>
+     								<select action ="booking.php" method ="get" class="custom-select" name="inputRoom"> 
+            							<option value="Standard" >Standard</option>
+            							<option value="Superior">Superior</option>
+            							<option value="Luxury">Luxury</option>
           							</select>
    								</div>
   					</div>
@@ -77,13 +77,13 @@
     						<div class="col-sm-10">
 
       							<div class="form-check form-check-inline">
-  									<input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"name="InputService[]">
-  										<label class="form-check-label" for="inlineCheckbox1" name="InputService" >Room Service</label>
+  									<input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Room Service" name="InputService[]">
+  										<label class="form-check-label" for="inlineCheckbox1">Room Service</label>
 								</div>
 
 								<div class="form-check form-check-inline">
-  									<input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"name="InputService[]">
- 										 <label class="form-check-label" for="inlineCheckbox2" name="InputService">Breakfast</label>
+  									<input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Breakfast" name="InputService[]">
+ 										 <label class="form-check-label" for="inlineCheckbox2">Breakfast</label>
 								</div>
 								<small id="passwordHelpBlock" class="form-text text-muted">
          									$20/Service
@@ -108,7 +108,17 @@
 			</div>
 
     		<div class="col-sm">
-      			<img src="">
+          <?php
+          $room = $_GET = ['inputRoom'] ;
+
+          if ($room == 'Standard') {
+            #gatau bang, soalnya kalo mau buat image picker dari option pake database.
+          }
+
+           ?>
+
+            <img src="img/standard.png" style="width: 100%; height: 300px">
+            
     		</div>
 
 
