@@ -65,7 +65,7 @@
     						<label for="inputDuration" class="col-sm-2 col-form-label">Room Type</label>
     							<div class="col-sm-10">
      								<select class="custom-select" name="inputRoom"> 
-            							<option>Standard</option>
+            							<option>Standard aaaaaaa</option>
             							<option>Superior</option>
             							<option>Luxury</option>
           							</select>
